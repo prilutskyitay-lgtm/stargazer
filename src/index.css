@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    @apply bg-cosmos-void text-cosmos-star;
+    min-height: 100%;
+  }
+
+  body {
+    @apply font-display antialiased;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(124, 92, 255, 0.18), transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(255, 122, 89, 0.10), transparent 55%),
+      #05060d;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(124, 92, 255, 0.45);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+input[type="range"].cosmos-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: linear-gradient(90deg, #7c5cff, #7dd3fc);
+  border-radius: 999px;
+  outline: none;
+}
+input[type="range"].cosmos-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.35), 0 0 24px rgba(124, 92, 255, 0.6);
+  cursor: grab;
+}
+input[type="range"].cosmos-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.35), 0 0 24px rgba(124, 92, 255, 0.6);
+  cursor: grab;
+}
